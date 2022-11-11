@@ -15,4 +15,5 @@ def gera_ajuda(dicquestao):
         erradas = erradas.replace(sorteio, '')
         sorteio = random.choice(erradas)
         sorteado2 = dicop[sorteio]
-        return 'DICA:\nOpções certamente erradas: ' + sorteado + ' | '  
+        return 'DICA:\nOpções certamente erradas: ' + sorteado + ' | '  + sorteado2
+    
