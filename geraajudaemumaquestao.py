@@ -17,3 +17,4 @@ def gera_ajuda(dicquestao):
         sorteado2 = dicop[sorteio]
         return 'DICA:\nOpções certamente erradas: ' + sorteado + ' | '  + sorteado2
     
+    
