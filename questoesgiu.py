@@ -13,4 +13,18 @@
           'opcoes': {'A': 'vermelho', 'B': 'rosa', 'C': 'preto', 'D': 'amarelo'},
           'correta': 'D'},
 
+{'titulo': 'Qual o maior país do mundo?',
+          'nivel': 'medio',
+          'opcoes': {'A': 'Brasil', 'B': 'Vaticano', 'C': 'Rússia', 'D': 'China'},
+          'correta': 'C'},
 
+{'titulo': 'Qual o resultado da operação 102x32?',
+          'nivel': 'medio',
+          'opcoes': {'A': '3264', 'B': '5704', 'C': '890,2', 'D': '332'},
+          'correta': 'A'},
+
+
+{'titulo': 'Qual o resultado da operação 102x32?',
+          'nivel': 'medio',
+          'opcoes': {'A': 'Steve Jobs', 'B': 'Elon Musk', 'C': 'Bill Gates', 'D': 'Mark Zuckerberg'},
+          'correta': 'D'},
