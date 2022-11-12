@@ -199,4 +199,5 @@ questoes=[{'titulo': 'Qual o resultado da operação 57 + 32?',
          {'titulo': 'Quem foi o principal criador da empresa APPLE?',
             'nivel': 'medio',
             'opcoes': {'A': 'Mark Zuckerberg', 'B': 'Steve Jobs', 'C': 'Elon Musk', 'D': 'Elizabeth Holmes'},
-            'correta':'B'}]
+            'correta':'B'}
+        ]
