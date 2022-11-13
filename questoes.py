@@ -308,7 +308,8 @@ if somaf == tamanhof and somam == tamanhom and somad == tamanhod:
       enter = input('\33[0mAperte Enter para continuar...')
       print('\33[0mO jogo já vai começar! Lá vem a primeira questão!\n\nVamos começar com questões do nível FÁCIL!\n')
       enter = input('\33[0mAperte ENTER para continuar')
-      print('\n\n-------------------------------------------')   
+      print('\n\n-------------------------------------------')
+         
 
 
 
