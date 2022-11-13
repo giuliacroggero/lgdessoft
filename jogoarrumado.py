@@ -1,3 +1,4 @@
+import random 
 questoes=[{'titulo': 'Qual o resultado da operação 57 + 32?',
           'nivel': 'facil',
           'opcoes': {'A': '-19', 'B': '85', 'C': '89', 'D': '99'},
@@ -305,6 +306,64 @@ if somaf == tamanhof and somam == tamanhom and somad == tamanhod:
       print('\33[0mO jogo já vai começar! Lá vem a primeira questão!\n\nVamos começar com questões do nível FÁCIL!\n')
       enter = input('\33[0mAperte ENTER para continuar')
       print('\n\n-------------------------------------------')
-          
-          
-          
+      continuar2=True
+      while continuar2:
+        def sorteia_questao(questoes,nivel):
+            questoes[nivel]
+            return random.choice(questoes[nivel])
+        def sorteia_questao_inedita(questoes,nivel, questoes_sorteadas):
+            y = sorteia_questao(questoes,nivel)
+            if y not in questoes_sorteadas:
+                questoes_sorteadas.append(y)
+            return y
+        lista_jafoi=[]
+        nivel='facil'
+        cont_nivel=0
+        if cont_nivel == 3:
+            nivel='medio'
+        elif cont_nivel ==6:
+            nivel= 'dificil'
+        
+        if cont_nivel ==0:
+            questao=sorteia_questao(dicio2,nivel)
+            lista_jafoi.append(questao)
+        if cont_nivel >0:
+            questao= sorteia_questao_inedita(dicio2,nivel,lista_jafoi)
+            lista_jafoi.append(questao)
+        
+        def questao_para_texto(questao,num):
+            i = 0
+            r = 0
+            n = str(num)
+            A = 0
+            B = 0
+            C = 0
+            D = 0
+            for i in questao:
+                if i == "titulo":
+                    t = questao[i]
+                if i == 'opcoes':
+                    r = questao[i]
+            for l in r:
+                if l == "A":
+                    A = r[l]
+                elif l == "B":
+                    B = r[l]
+                elif l == "C":
+                    C = r[l]
+                elif l == "D":
+                    D = r[l]
+            res = "----------------------------------------\nQUESTAO {0}\n\n{1}\n\nRESPOSTAS:\nA: {2}\nB: {3}\nC: {4}\nD: {5}".format(n,t,A,B,C,D)
+            return res
+        
+        pergunta= questao_para_texto(questao,cont_nivel+1)
+        print (pergunta)
+        resposta=input('Qual sua resposta?! ')
+        if resposta == questao['correta'] :
+            print ('\33[32mVocê acertou! Seu prêmio atual é de {}'.format())
+        
+
+
+        cont_nivel+=1
+        continuar= False
+        continuar2=False
