@@ -313,6 +313,7 @@ if somaf == tamanhof and somam == tamanhom and somad == tamanhod:
       ajudac = 2
       pular = 3
       jafoia = 0
+      listavalidos = ['ajuda', 'pula', 'parar', 'A', 'B', 'C', 'D']
       while continuar2:
         def sorteia_questao(questoes,nivel):
             questoes[nivel]
@@ -358,7 +359,7 @@ if somaf == tamanhof and somam == tamanhom and somad == tamanhod:
                     C = r[l]
                 elif l == "D":
                     D = r[l]
-            res = "----------------------------------------\nQUESTAO {0}\n\n{1}\n\nRESPOSTAS:\nA: {2}\nB: {3}\nC: {4}\nD: {5}".format(n,t,A,B,C,D)
+            res = "----------------------------------------\n\33[36mQUESTAO {0}\n\n{1}\n\n\33[0mRESPOSTAS:\nA: {2}\nB: {3}\nC: {4}\nD: {5}".format(n,t,A,B,C,D)
             return res
         listaopcoes = ['A', 'B', 'C', 'D']
         listaerradas = []
@@ -407,7 +408,10 @@ if somaf == tamanhof and somam == tamanhom and somad == tamanhod:
                 enter = input('\33[0mAperte ENTER para continuar')
                 print(chamaajuda)
                 jafoia += 1
-            
+        elif resposta not in listavalidos:
+            print('\33[31mOpção inválida\n\33[36mAs opções de resposta são "A", "B", "C", "D", "ajuda", "pula" e "parar"!')
+            cont_nivel = cont_nivel - 1
+            resposta=input('\n\n\33[0mQual sua resposta?! ')
         
         
         
