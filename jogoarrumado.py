@@ -310,6 +310,9 @@ if somaf == tamanhof and somam == tamanhom and somad == tamanhod:
       lista_jafoi=[]
       nivel='facil'
       cont_nivel= 0
+      ajudac = 2
+      pular = 3
+      jafoia = 0
       while continuar2:
         def sorteia_questao(questoes,nivel):
             questoes[nivel]
@@ -321,13 +324,15 @@ if somaf == tamanhof and somam == tamanhom and somad == tamanhod:
             return y
         if cont_nivel == 3:
             nivel='medio'
+            print('HEY! Você passou para o nível MEDIO!')
         elif cont_nivel ==6:
             nivel= 'dificil'
+            print('HEY! Você passou para o nível DIFICIL!')
         
-        if cont_nivel ==0:
+        if cont_nivel ==0 and jafoia!= 1:
             questao=sorteia_questao(dicio2,nivel)
             lista_jafoi.append(questao)
-        if cont_nivel >0:
+        if cont_nivel >0 and jafoia != 1:
             questao= sorteia_questao_inedita(dicio2,nivel,lista_jafoi)
             lista_jafoi.append(questao)
         
@@ -365,12 +370,44 @@ if somaf == tamanhof and somam == tamanhom and somad == tamanhod:
             if v != respostac:
                 listaerradas.append(v)
         if resposta == questao['correta'] :
+            jafoia = 0
             print ('\33[32mVocê acertou! Seu prêmio atual é de')
+            enter = input('\33[0mAperte ENTER para continuar')
         elif resposta in listaerradas:
             print ('\33[32mVocê errou!')
+            enter = input('\33[0mAperte ENTER para continuar')
             continuar= False
             continuar2=False
-        elif resposta == 'ajuda'
+        elif resposta == 'ajuda':
+            def gera_ajuda(dicquestao):
+                correta = dicquestao['correta']
+                erradas = 'ABCD'.replace(correta, '')
+                qntd = random.choice([1,2])
+                if qntd == 1:
+                    sorteio = random.choice(erradas)
+                    dicop = dicquestao['opcoes']
+                    sorteado = dicop[sorteio]
+                    return 'DICA:\nOpções certamente erradas: ' + sorteado
+                else:
+                    sorteio = random.choice(erradas)
+                    dicop = dicquestao['opcoes']
+                    sorteado = dicop[sorteio]
+                    erradas = erradas.replace(sorteio, '')
+                    sorteio = random.choice(erradas)
+                    sorteado2 = dicop[sorteio]
+                    return 'DICA:\nOpções certamente erradas: ' + sorteado + ' | '  + sorteado2
+            ajudac = ajudac - 1
+            cont_nivel = cont_nivel - 1
+            chamaajuda = gera_ajuda(questao)
+            if jafoia == 1:
+                print('\33[35mNão deu! Você não tem mais direito a ajuda!')
+                enter = input('\33[0mAperte ENTER para continuar')
+            if jafoia == 0:
+                print('\33[0mOk, lá vem ajuda! Você ainda tem {} ajudas!'.format(ajudac))
+                enter = input('\33[0mAperte ENTER para continuar')
+                print(chamaajuda)
+                jafoia += 1
+            
         
         
         
