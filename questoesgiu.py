@@ -24,7 +24,7 @@
           'correta': 'A'},
 
 
-{'titulo': 'Qual o resultado da operação 102x32?',
+{'titulo': 'Quem foi o criador do Facebook?',
           'nivel': 'medio',
           'opcoes': {'A': 'Steve Jobs', 'B': 'Elon Musk', 'C': 'Bill Gates', 'D': 'Mark Zuckerberg'},
           'correta': 'D'},
