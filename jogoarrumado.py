@@ -412,4 +412,3 @@ if somaf == tamanhof and somam == tamanhom and somad == tamanhod:
         
         
         cont_nivel+=1
-        
