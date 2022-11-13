@@ -156,22 +156,22 @@ questoes=[{'titulo': 'Qual o resultado da operação 57 + 32?',
          {'titulo': 'O que é Necrose?',
           'nivel': 'dificil',
           'opcoes': {'A': 'Uma banda de Rock', 'B': 'Uma marca de luxo', 'C': 'Cidade Francesa', 'D': 'Morte de tecido orgânico'},
-          'correta':'D'}
+          'correta':'D'},
 
          {'titulo': ' Em qual tipo de equação utiza-se o método de Bhaskara?',
           'nivel': 'facil',
           'opcoes': {'A': 'Equação de primeiro grau', 'B': 'Equação de segundo grau', 'C': 'Equação Logarítmica', 'D': 'Equação de Gauss'},
-          'correta':'B'}
+          'correta':'B'},
 
          {'titulo': 'Qual é a tradução da palavra run em português?',
           'nivel': 'facil',
           'opcoes': {'A': 'andar', 'B': 'pensar', 'C': 'correr', 'D': 'nadar'},
-          'correta':'C'}
+          'correta':'C'},
         
          {'titulo': 'Quanto é 24 multiplicado por 8 ?',
           'nivel': 'facil',
           'opcoes': {'A': '182', 'B': '84', 'C': '32', 'D': '192'},
-          'correta':'D'}
+          'correta':'D'},
         
          {'titulo': 'Qual o nome do presidente do Brasil eleito para 2023?',
           'nivel': 'facil',
@@ -190,7 +190,7 @@ questoes=[{'titulo': 'Qual o resultado da operação 57 + 32?',
          {'titulo': 'A premiação GRAMMY é para que tipo de categoria?',
             'nivel': 'medio',
             'opcoes': {'A': 'teatro', 'B': 'filmes', 'C': 'tecnologia', 'D': 'Músicas'},
-            'correta':'D'}
+            'correta':'D'},
         
          {'titulo': 'Quem foi o principal criador da empresa APPLE?',
             'nivel': 'medio',
@@ -200,10 +200,10 @@ questoes=[{'titulo': 'Qual o resultado da operação 57 + 32?',
          {'titulo': 'Qual o resultado da operação 102x32',
             'nivel': 'medio',
             'opcoes': {'A': '320', 'B': '3264', 'C': '3200', 'D': '1032'},
-            'correta':'B'}
+            'correta':'B'},
 
          {'titulo': 'Quem foi o criador do Facebook?',
           'nivel': 'medio',
           'opcoes': {'A': 'Steve Jobs', 'B': 'Elon Musk', 'C': 'Bill Gates', 'D': 'Mark Zuckerberg'},
-          'correta': 'D'},
-         ]
+          'correta': 'D'} ]
+                         
