@@ -361,6 +361,12 @@ if somaf == tamanhof and somam == tamanhom and somad == tamanhod:
                     D = r[l]
             res = "----------------------------------------\n\33[36mQUESTAO {0}\n\n{1}\n\n\33[0mRESPOSTAS:\nA: {2}\nB: {3}\nC: {4}\nD: {5}".format(n,t,A,B,C,D)
             return res
+        
+        def gera_ajuda(dicquestao):
+                correta = dicquestao['correta']
+                erradas = 'ABCD'.replace(correta, '')
+                qntd = random.choice([1,2])
+                return 'DICA:\nOpções certamente erradas: ' + sorteado
         listaopcoes = ['A', 'B', 'C', 'D']
         listaerradas = []
         pergunta= questao_para_texto(questao,cont_nivel+1)
@@ -380,16 +386,12 @@ if somaf == tamanhof and somam == tamanhom and somad == tamanhod:
             continuar= False
             continuar2=False
         elif resposta == 'ajuda':
-            def gera_ajuda(dicquestao):
-                correta = dicquestao['correta']
-                erradas = 'ABCD'.replace(correta, '')
-                qntd = random.choice([1,2])
-                if qntd == 1:
-                    sorteio = random.choice(erradas)
-                    dicop = dicquestao['opcoes']
-                    sorteado = dicop[sorteio]
-                    return 'DICA:\nOpções certamente erradas: ' + sorteado
-                else:
+            
+            if qntd == 1:
+                sorteio = random.choice(erradas)
+                dicop = dicquestao['opcoes']
+                sorteado = dicop[sorteio]
+            else:
                     sorteio = random.choice(erradas)
                     dicop = dicquestao['opcoes']
                     sorteado = dicop[sorteio]
