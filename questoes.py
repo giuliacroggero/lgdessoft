@@ -1,3 +1,7 @@
+
+
+
+
 questoes=[{'titulo': 'Qual o resultado da operação 57 + 32?',
           'nivel': 'facil',
           'opcoes': {'A': '-19', 'B': '85', 'C': '89', 'D': '99'},
@@ -206,4 +210,106 @@ questoes=[{'titulo': 'Qual o resultado da operação 57 + 32?',
           'nivel': 'medio',
           'opcoes': {'A': 'Steve Jobs', 'B': 'Elon Musk', 'C': 'Bill Gates', 'D': 'Mark Zuckerberg'},
           'correta': 'D'} ]
+
+def transforma_base(questoes):
+    dic2 = {}
+    lista1 = []
+    lista2 = []
+    lista3 = []
+    i = 0
+    for i in range(len(questoes)):
+        v=questoes[i]['nivel']
+        if v== 'facil':
+            lista1.append(questoes[i])
+            dic2['facil'] = lista1 
+        elif v== 'medio':
+            lista2.append(questoes[i])
+            dic2['medio'] = lista2
+        elif v== 'dificil':
+            lista3.append(questoes[i])
+            dic2['dificil'] = lista3 
+    return dic2         
+
+dicio2 = transforma_base(questoes)
                          
+def valida_questao(questoes):
+    chaves = ["titulo", "nivel", "opcoes", "correta"]
+    dic = {}
+    for chave in chaves:
+        if chave not in questoes:
+            dic[chave] = "nao_encontrado" 
+    if "titulo" in questoes:
+        questoes['titulo']=questoes['titulo'].strip()
+        if questoes['titulo']=='':
+            dic["titulo"] = "vazio"      
+    if len(questoes.keys()) != 4:
+        dic["outro"] = "numero_chaves_invalido"     
+    if "nivel" in questoes.keys():
+        if questoes["nivel"] not in ['facil', "medio", "dificil"]:
+            dic["nivel"] = "valor_errado"            
+    if "correta" in questoes.keys():
+        if questoes["correta"] not in 'ABCD':
+            dic["correta"] = "valor_errado"
+    if "opcoes" in questoes.keys():
+        if len(questoes["opcoes"]) != 4:
+            dic["opcoes"] = "tamanho_invalido"
+        else:
+            if questoes["opcoes"].keys() != {"A", "B", "C", "D"}:
+                dic["opcoes"] = "chave_invalida_ou_nao_encontrada"
+            else:
+                for chav, valor in questoes["opcoes"].items():
+                    valor=valor.strip()
+                    if valor== '':
+                        if "opcoes" not in dic:
+                            dic["opcoes"] = {}
+                            dic["opcoes"][chav] = "vazia" 
+                        else:
+                            dic["opcoes"][chav] = "vazia"
+    return dic
+
+
+def valida_questoes(questoes):
+    list = []
+    for y in range(len(questoes)):
+        z = valida_questao(questoes[y])
+        if z == {}:
+            list.append({})
+        else:
+            list.append(z)
+    return list
+
+f = valida_questoes(dicio2['facil'])
+m = valida_questoes(dicio2['medio'])
+d = valida_questoes(dicio2['dificil'])
+
+tamanhof = len(f)
+tamanhom = len(m)
+tamanhod = len(d)
+somaf = 0
+somam = 0
+somad = 0
+for a in f:
+   if a == {}:
+      somaf += 1
+for a in m:
+   if a == {}:
+      somam += 1
+for a in d:
+   if a == {}:
+      somad += 1
+if somaf == tamanhof and somam == tamanhom and somad == tamanhod:
+   continuar = True
+   while continuar:
+
+      print('\33[35mOlá! Você está na Fortuna DesSoft e terá a oportunidade de enriquecer!\n\n' )
+      nome = input('\33[0mQual o seu nome? ')
+      print('\33[37mOk {0}, você tem direito a pular 3 vezes e 2 ajudas!\n'.format(nome))
+      print('\33[36mAs opções de resposta são "A", "B", "C", "D", "ajuda", "pula" e "parar"!\n\n')
+      enter = input('\33[0mAperte Enter para continuar...')
+      print('\33[0mO jogo já vai começar! Lá vem a primeira questão!\n\nVamos começar com questões do nível FÁCIL!\n')
+      enter = input('\33[0mAperte ENTER para continuar')
+      print('\n\n-------------------------------------------')   
+
+
+
+   
