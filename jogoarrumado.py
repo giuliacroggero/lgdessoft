@@ -31,7 +31,7 @@ questoes=[{'titulo': 'Qual o resultado da operação 57 + 32?',
 
          {'titulo': 'Qual destas não é uma fruta?',
           'nivel': 'facil',
-          'opcoes': {'A': 'Laranja', 'B': 'Maça', 'C': 'Tomate', 'D': 'Abacate'},
+          'opcoes': {'A': 'Laranja', 'B': 'Arroz', 'C': 'Tomate', 'D': 'Abacate'},
           'correta': 'B'},
 
          {'titulo': 'Em qual ano o TikTok atingiu 1 bilhão de usuários?',
@@ -307,6 +307,9 @@ if somaf == tamanhof and somam == tamanhom and somad == tamanhod:
       enter = input('\33[0mAperte ENTER para continuar')
       print('\n\n-------------------------------------------')
       continuar2=True
+      lista_jafoi=[]
+      nivel='facil'
+      cont_nivel= 0
       while continuar2:
         def sorteia_questao(questoes,nivel):
             questoes[nivel]
@@ -316,9 +319,6 @@ if somaf == tamanhof and somam == tamanhom and somad == tamanhod:
             if y not in questoes_sorteadas:
                 questoes_sorteadas.append(y)
             return y
-        lista_jafoi=[]
-        nivel='facil'
-        cont_nivel=0
         if cont_nivel == 3:
             nivel='medio'
         elif cont_nivel ==6:
@@ -355,15 +355,24 @@ if somaf == tamanhof and somam == tamanhom and somad == tamanhod:
                     D = r[l]
             res = "----------------------------------------\nQUESTAO {0}\n\n{1}\n\nRESPOSTAS:\nA: {2}\nB: {3}\nC: {4}\nD: {5}".format(n,t,A,B,C,D)
             return res
-        
+        listaopcoes = ['A', 'B', 'C', 'D']
+        listaerradas = []
         pergunta= questao_para_texto(questao,cont_nivel+1)
         print (pergunta)
         resposta=input('Qual sua resposta?! ')
+        respostac = questao['correta']
+        for v in listaopcoes:
+            if v != respostac:
+                listaerradas.append(v)
         if resposta == questao['correta'] :
-            print ('\33[32mVocê acertou! Seu prêmio atual é de {}'.format())
+            print ('\33[32mVocê acertou! Seu prêmio atual é de')
+        elif resposta in listaerradas:
+            print ('\33[32mVocê errou!')
+            continuar= False
+            continuar2=False
+        elif resposta == 'ajuda'
         
-
-
+        
+        
         cont_nivel+=1
-        continuar= False
-        continuar2=False
+        
