@@ -1,4 +1,4 @@
-2 ajudas certo
+'''2 ajudas certo
 3 pulos
 Parar
-opcao invalida
+opcao invalida'''
