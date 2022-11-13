@@ -170,7 +170,7 @@ questoes=[{'titulo': 'Qual o resultado da operação 57 + 32?',
         
          {'titulo': 'Quanto é 24 multiplicado por 8 ?',
           'nivel': 'facil',
-          'opcoes': {'A': '', 'B': 'Uma marca de luxo', 'C': 'Cidade Francesa', 'D': 'Morte de tecido orgânico'},
+          'opcoes': {'A': '182', 'B': '84', 'C': '32', 'D': '192'},
           'correta':'D'}
         
          {'titulo': 'Qual o nome do presidente do Brasil eleito para 2023?',
@@ -178,7 +178,7 @@ questoes=[{'titulo': 'Qual o resultado da operação 57 + 32?',
           'opcoes': {'A': 'Jair Bolsonaro', 'B': 'Luís Inácio da Silva', 'C': 'Jânio Quadros', 'D': 'Ciro Gomes'},
           'correta': 'B'},
 
-         {'titulo': 'Oque a palavra "water" significa em português?',
+         {'titulo': 'O que a palavra "water" significa em português?',
           'nivel': 'facil',
           'opcoes': {'A': 'água', 'B': 'suco', 'C': 'doce', 'D': 'baleia'},
           'correta': 'A'},
@@ -187,7 +187,7 @@ questoes=[{'titulo': 'Qual o resultado da operação 57 + 32?',
             'nivel': 'facil',
             'opcoes': {'A': 'vermelho', 'B': 'rosa', 'C': 'preto', 'D': 'amarelo'},
             'correta': 'D'},
-         {'titulo': 'A premiação GRAMMY que tipo de categoria?',
+         {'titulo': 'A premiação GRAMMY é para que tipo de categoria?',
             'nivel': 'medio',
             'opcoes': {'A': 'teatro', 'B': 'filmes', 'C': 'tecnologia', 'D': 'Músicas'},
             'correta':'D'}
@@ -196,8 +196,14 @@ questoes=[{'titulo': 'Qual o resultado da operação 57 + 32?',
             'nivel': 'medio',
             'opcoes': {'A': 'Mark Zuckerberg', 'B': 'Steve Jobs', 'C': 'Elon Musk', 'D': 'Elizabeth Holmes'},
             'correta':'B'},
-         {'titulo': 'Quem foi o principal criador da empresa APPLE?',
+         
+         {'titulo': 'Qual o resultado da operação 102x32',
             'nivel': 'medio',
-            'opcoes': {'A': 'Mark Zuckerberg', 'B': 'Steve Jobs', 'C': 'Elon Musk', 'D': 'Elizabeth Holmes'},
+            'opcoes': {'A': '320', 'B': '3264', 'C': '3200', 'D': '1032'},
             'correta':'B'}
-        ]
+
+         {'titulo': 'Quem foi o criador do Facebook?',
+          'nivel': 'medio',
+          'opcoes': {'A': 'Steve Jobs', 'B': 'Elon Musk', 'C': 'Bill Gates', 'D': 'Mark Zuckerberg'},
+          'correta': 'D'},
+         ]
