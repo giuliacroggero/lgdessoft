@@ -98,7 +98,7 @@ def questao_para_texto(questao,num):
             C = r[l]
         elif l == "D":
             D = r[l]
-    res = ("----------------------------------------\nQUESTAO {0}\n\n{1}\n\nRESPOSTAS:\nA: {2}\nB: {3}\nC: {4}\nD: {5}".format(n,t,A,B,C,D))
+    res = ("----------------------------------------\n\33[34mQUESTAO {0}\n\n\33[0m{1}\n\nRESPOSTAS:\nA: {2}\nB: {3}\nC: {4}\nD: {5}".format(n,t,A,B,C,D))
     return res
 
 def gera_ajuda(dicquestao):

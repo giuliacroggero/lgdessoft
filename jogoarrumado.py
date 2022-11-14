@@ -86,29 +86,29 @@ if somaf == tamanhof and somam == tamanhom and somad == tamanhod:
             cont_nivel+=1
             
         if resposta in listaerradas:
-            print ('\33[32mVocê errou!')
+            print ('\33[31mVocê errou e vai sair sem nada :(')
             enter = input('\33[0mAperte ENTER para continuar')
             play_again = input('Deseja jogar novamente? (s/n) ')
             
             if play_again == 's':
-               v_i = 0
-               continuar= True
-               continuar2= True
-               lista_jafoi=[]
-               nivel='facil'
-               cont_nivel= 0
-               ajudac = 2
-               pular = 3
-               jafoia = 0
-               listavalidos = ['ajuda', 'pula', 'parar', 'A', 'B', 'C', 'D']
-               continuar2 = True
-               val = 0
-               questao=sorteia_questao(dicio2,nivel)
-               lista_jafoi.append(questao)
-            if play_again == 'n':
-                print('Obrigado por jogar!')
-                continuar= False
-                continuar2= False
+                v_i = 0
+                continuar= True
+                continuar2= True
+                lista_jafoi=[]
+                nivel='facil'
+                cont_nivel= 0
+                ajudac = 2
+                pular = 3
+                jafoia = 0
+                listavalidos = ['ajuda', 'pula', 'parar', 'A', 'B', 'C', 'D']
+                continuar2 = True
+                val = 0
+                questao=sorteia_questao(dicio2,nivel)
+                lista_jafoi.append(questao)
+                if play_again == 'n':
+                    print('Obrigado por jogar!')
+                    continuar= False
+                    continuar2= False
             
             
         if resposta == 'ajuda':
