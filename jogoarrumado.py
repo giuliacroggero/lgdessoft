@@ -14,6 +14,8 @@ tamanhod = len(d)
 somaf = 0
 somam = 0
 somad = 0
+valor_lista = [0,1000,5000,10000,30000,50000,100000,300000,500000,1000000]
+v_i = 0
 
 for a in f:
    if a == {}:
@@ -72,33 +74,72 @@ if somaf == tamanhof and somam == tamanhom and somad == tamanhod:
                 
         if resposta == questao['correta'] :
             jafoia = 0
-            print ('\33[32mVocê acertou! Seu prêmio atual é de')
+            v_i = v_i+1
+            print ('\33[32mVocê acertou! Seu prêmio atual é de {}'.format(valor_lista[v_i]))
+            
+            if valor_lista[v_i] == 1000000:
+                print('Você é o novo milionário!')
+                continuar2 = False
+                continuar = False
+                
             enter = input('\33[0mAperte ENTER para continuar')
             cont_nivel+=1
             
         if resposta in listaerradas:
             print ('\33[32mVocê errou!')
             enter = input('\33[0mAperte ENTER para continuar')
-            continuar= False
-            continuar2=False
+            play_again = input('Deseja jogar novamente? (s/n) ')
+            
+            if play_again == 's':
+               v_i = 0
+               continuar= True
+               continuar2= True
+               lista_jafoi=[]
+               nivel='facil'
+               cont_nivel= 0
+               ajudac = 2
+               pular = 3
+               jafoia = 0
+               listavalidos = ['ajuda', 'pula', 'parar', 'A', 'B', 'C', 'D']
+               continuar2 = True
+               val = 0
+               questao=sorteia_questao(dicio2,nivel)
+               lista_jafoi.append(questao)
+            if play_again == 'n':
+                print('Obrigado por jogar!')
+                continuar= False
+                continuar2= False
+            
             
         if resposta == 'ajuda':
-            ajudac = ajudac - 1
-            cont_nivel = cont_nivel - 1
+            val = 0
             chamaajuda = gera_ajuda(questao)
+            ajudac = ajudac - 1
             
-            if jafoia == 1:
+            if ajudac < 0:
+                print('Você já usou todas as suas ajudas!')
+                enter = input('\33[0mAperte ENTER para continuar')
+            
+            
+            
+            
+            
+            elif jafoia == 1:
                 print('\33[35mNão deu! Você não tem mais direito a ajuda!')
                 enter = input('\33[0mAperte ENTER para continuar')
-                cont_nivel+=1
                 
-            if jafoia == 0:
-                print('\33[0mOk, lá vem ajuda! Você ainda tem {} ajudas!'.format(ajudac))
+            elif jafoia == 0:
+                
+                if ajudac == 0:
+                    print("Você usou sua ultima ajuda")
+                else:
+                    print('\33[0mOk, lá vem ajuda! Você ainda tem {} ajudas!'.format(ajudac))
                 enter = input('\33[0mAperte ENTER para continuar')
                 print(chamaajuda)
                 jafoia += 1
                 enter = input('\33[0mAperte ENTER para continuar')
-                cont_nivel+=1
+                
+
                 
         if resposta not in listavalidos:
             print('\33[31mOpção inválida\n\33[36mAs opções de resposta são "A", "B", "C", "D", "ajuda", "pula" e "parar"!')
@@ -121,4 +162,26 @@ if somaf == tamanhof and somam == tamanhom and somad == tamanhod:
         if resposta == 'parar':
             continuar2 = False
             continuar = False
-            print('\33[0mOk, você parou o jogo! Até a próxima!')
+            print('\33[0mOk, você parou o jogo! Sua premiação é {}'.format(valor_lista[v_i]))
+            play_again = input('Deseja jogar novamente? (s/n) ')
+            
+            if play_again == 's':
+               v_i = 0
+               continuar= True
+               continuar2= True
+               lista_jafoi=[]
+               nivel='facil'
+               cont_nivel= 0
+               ajudac = 2
+               pular = 3
+               jafoia = 0
+               listavalidos = ['ajuda', 'pula', 'parar', 'A', 'B', 'C', 'D']
+               continuar2 = True
+               val = 0
+               questao=sorteia_questao(dicio2,nivel)
+               lista_jafoi.append(questao)
+            if play_again == 'n':
+                print('Obrigado por jogar!')
+                continuar= False
+                continuar2= False
+            
